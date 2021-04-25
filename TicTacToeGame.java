@@ -131,4 +131,9 @@ switch (userInput){
 			return false;
 			}
 }
+/* UC6 */
+private static String firstPlayCheck() {
+			int toss = (int) (Math.random() * 10) % 2;
+			return (toss == 1) ? (player) : (computer);
+		}
 }
