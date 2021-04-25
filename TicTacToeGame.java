@@ -7,6 +7,7 @@ public static void main(String[] args) {
 	char userLetter=chooseUserLetter(userInput);
 	char computerLetter = (userLetter =='X')?'0':'X'; 
 	showBoard(board);
+	int userMove = getUserMove(board,userInput);
 <<<<<<< HEAD
 	}
 =======
@@ -37,4 +38,21 @@ public static void showBoard(char board[]) {
 	System.out.println("---------------------");
 
 }
+
+/* UC4 */
+private static int getUserMove(char[] board, Scanner userInput) {
+	Integer [] validcells= {1,2,3,4,5,6,7,8,9};
+	while(true) {
+		System.out.println("What is your next move? (1-9): ");
+		int index = userInput.nextInt();
+		if(Arrays.asList(validcells).contains(index) && isSpaceFree(board,index))
+		return index;
+	}
+}
+public static boolean isSpaceFree(char[] board, int index) {
+	return board[index]==' ' ;
+}
+
+}
+
 }
