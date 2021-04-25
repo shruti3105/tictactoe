@@ -7,7 +7,11 @@ public static void main(String[] args) {
 	char userLetter=chooseUserLetter(userInput);
 	char computerLetter = (userLetter =='X')?'0':'X'; 
 	showBoard(board);
+<<<<<<< HEAD
 	}
+=======
+}
+>>>>>>> UC3
 
 private static char[] createBoard() {
 	char[] board= new char[10];
