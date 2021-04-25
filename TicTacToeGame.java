@@ -8,6 +8,13 @@ public static void main(String[] args) {
 	char computerLetter = (userLetter =='X')?'0':'X'; 
 	showBoard(board);
 	int userMove = getUserMove(board,userInput);
+	int move=input.nextInt();
+		boolean result=isValidMove(move,board);
+		while(!result){
+		System.out.Println("Invalid move!");
+		move=input.nextInt();
+		result=isValidMove(move,board);
+		}
 <<<<<<< HEAD
 	}
 =======
@@ -53,6 +60,75 @@ public static boolean isSpaceFree(char[] board, int index) {
 	return board[index]==' ' ;
 }
 
-}
 
+/* UC5 */
+public static boolean isValidMove(int move, char[] board){
+switch (userInput){
+	case 1:
+			if(board[1]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 2:
+			if(board[2]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 3:
+			if(board[3]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 4:
+			if(board[4]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 5:
+			if(board[5]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 6:
+			if(board[6]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 7:
+			if(board[7]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 8:
+			if(board[8]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			case 9:
+			if(board[9]==' ' ){
+			return true;
+			}
+			else{
+			return false;
+			}
+			default:
+			return false;
+			}
+}
 }
