@@ -15,8 +15,38 @@ public static void main(String[] args) {
 		move=input.nextInt();
 		result=isValidMove(move,board);
 		}
+
 <<<<<<< HEAD
 	}
+String firstPlayer=	firstPlayCheck();
+			if(firstPlayer.equalsIgnoreCase(player)) {
+				turn = player;
+				System.out.println("Player  Turns First");
+			}
+			else {
+				
+				System.out.println("Computer Turns First");	
+				turn =computer;
+			}
+			
+		    
+			do {
+				if (turn.equalsIgnoreCase(player)) {
+					index = indexChooser(board, scanner);
+					valueAssign(index, board, userLetter);	
+					check = checkWinAndTieCondition(board, userLetter);
+					turn = computer;
+				} 
+				else {
+					index = 9;
+				board[index] = compLetter;
+				showBoard(board);
+				check = checkWinAndTieCondition(board, compLetter);
+				turn = player;
+				}
+			} while (!check);
+			showBoard(board);
+		}	
 =======
 }
 >>>>>>> UC3
@@ -136,4 +166,28 @@ private static String firstPlayCheck() {
 			int toss = (int) (Math.random() * 10) % 2;
 			return (toss == 1) ? (player) : (computer);
 		}
+/* UC7 */
+private static boolean checkWinAndTieCondition(char[] board, char userLetter) {
+		boolean check;
+		if ((board[1] == userLetter && board[2] == userLetter && board[3] == userLetter) || (board[4] == userLetter && board[5] == userLetter && board[6] == userLetter)
+				|| (board[7] == userLetter && board[8] == userLetter && board[9] == userLetter)
+				|| (board[1] == userLetter && board[4] == userLetter && board[7] == userLetter)
+				|| (board[2] == userLetter && board[5] == userLetter && board[8] == userLetter)
+				|| (board[3] == userLetter && board[6] == userLetter && board[9] == userLetter)
+				|| (board[1] == userLetter && board[5] == userLetter && board[9] == userLetter)
+				|| (board[3] == userLetter && board[5] == userLetter && board[7] == userLetter)) {
+			check = true;
+			System.out.println("Player Won");
+		} else {
+			int valid = 0;
+			for (int index = 1; index < board.length; index++) {
+				if (board[index] == ' ')
+					valid++;
+			}
+			check = (valid == 9) ? (true) : (false);
+
+		}
+		return check;
+		
+	}
 }
